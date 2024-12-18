@@ -27,10 +27,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
+//Tasks router
 app.use('/api/tasks', tasksRouter);
-app.use(errHandler);
 //Users router
 app.use('/api/users', usersRouter);
+app.use(errHandler);
 
 app.listen(port, () => {
   console.info(`Server running at ${port}`);
